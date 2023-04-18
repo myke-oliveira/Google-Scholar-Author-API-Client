@@ -19,12 +19,8 @@ public class Main {
     try {
       HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
       System.out.println(response.body());
-    } catch (IOException e) {
-      System.out.println(e);
-    } catch (InterruptedException e) {
+    } catch (IOException | InterruptedException e) {
       System.out.println(e);
     }
-
-
   }
 }
