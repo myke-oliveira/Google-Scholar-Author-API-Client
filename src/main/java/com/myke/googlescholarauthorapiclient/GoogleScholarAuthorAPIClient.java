@@ -1,8 +1,5 @@
 package com.myke.googlescholarauthorapiclient;
 
-import java.util.Scanner;
-import org.json.JSONObject;
-
 // AuthorId: EicYvbwAAAAJ
 public class GoogleScholarAuthorAPIClient {
 
