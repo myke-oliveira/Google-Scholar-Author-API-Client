@@ -10,7 +10,12 @@ public class GoogleScholarAuthorAPI {
     public String request(String authorId) throws GoogleScholarAuthorAPIError {
         String apiKey = System.getenv("SERP_APIKEY");
         String engine = "google_scholar_author";
-        String urlStr = String.format("https://serpapi.com/search?engine=%s&author_id=%s&api_key=%s", engine, authorId, apiKey);
+        String urlStr = String.format(
+                "https://serpapi.com/search?engine=%s&author_id=%s&api_key=%s", 
+                engine, 
+                authorId, 
+                apiKey
+        );
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(URI.create(urlStr)).build();

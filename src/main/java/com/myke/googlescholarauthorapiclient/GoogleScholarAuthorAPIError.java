@@ -1,6 +1,6 @@
 package com.myke.googlescholarauthorapiclient;
 
-public class GoogleScholarAuthorAPIError extends Throwable {
+public class GoogleScholarAuthorAPIError extends Exception {
     private final String message;
     
     GoogleScholarAuthorAPIError(Throwable e) {

@@ -2,10 +2,11 @@ package com.myke.googlescholarauthorapiclient;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONException;
 
 public class GoogleScholarAuthorAPIClientController {
-    private AuthorModel model;
-    private GoogleScholarAuthorAPIClientView view;
+    private final AuthorModel model;
+    private final GoogleScholarAuthorAPIClientView view;
     
     GoogleScholarAuthorAPIClientController(
         AuthorModel model,
@@ -23,9 +24,8 @@ public class GoogleScholarAuthorAPIClientController {
         } catch (GoogleScholarAuthorAPIError ex) {
             Logger.getLogger(GoogleScholarAuthorAPIClientController.class.getName()).log(Level.SEVERE, null, ex);
             return "Google Scholar Author API has given an error response!!!";
-        } catch (Exception e) {
-            Logger.getLogger(Exception.class.getName()).log(Level.SEVERE, null, e);
-            return "This query has given an error!!";
+        } catch (AppError ex) {
+            return "An Error might have been logged at \"\\temp\\log\\\"";
         }
         return this.model.toString();
     }
